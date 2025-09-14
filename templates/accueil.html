@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ header }}</h1>
+    </header>
+    {% if session.get('log') %}
+    <h1>Bonjour {{session.get('prenom')}} {{session.get('nom')}}</h1> 
+
+    <div><a href="deconnexion"><button>deco</button></a></div>
+
+    {% else %}
+    <div>
+        <a href="inscription"><button>S'inscrire</button></a>
+        <a href="connexion"><button>S'authentifier</button></a>
+    </div>
+
+    {% endif %}
+
+    <section>
+        <h2>Une large gamme de produits</h2>
+        <p>Nous vendons toute une gamme de produits parmi lesquels :</p>
+        <ul>
+            <li>Des produits alimentaires</li>
+            <li>Des produits en bureautique et informatique</li>
+            <li>Des produits vestimentaires</li>
+            <li>Des produits électroménagers</li>
+        </ul>
+        <p>
+            Depuis des années nous sommes présents pour vous offrir tous les produits dont vous pouvez avoir besoin au quotidien. 
+            Vous pouvez consulter les produits que nous vendons et passer les récupérer ou bien vous faire livrer.
+        </p>
+    </section>
+
+    <section>
+        <h2>Comment venir récupérer une commande chez nous ?</h2>
+        <p>
+            Nous sommes situés à Nouville aux abords de l'Université de la Nouvelle-Calédonie. 
+            Nous sommes ouverts en semaine de 7h à 17h en continu et le samedi de 8h à midi.
+        </p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.427982253242!2d166.40328839999998!3d-22.262904199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6c27e3195717d73f%3A0x1cf8fb3ff0b7cb75!2sUniversit%C3%A9%20de%20la%20Nouvelle%20Cal%C3%A9donie!5e1!3m2!1sfr!2sfr!4v1757024734888!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section>
+        <h2>Comment nous contacter ou vous faire livrer ?</h2>
+        <p>Numéro de téléphone : 292929</p>
+        <p>Adresse mail : vente_nc.nc</p>
+    </section>
+
+    <footer>
+        <p>{{ current_year }} {{ site_name }}. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
